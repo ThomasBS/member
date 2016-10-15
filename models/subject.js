@@ -1,5 +1,5 @@
 module.exports.getSubjects = function(con, id, callback){
-    con.query('SELECT * FROM subjects WHERE categoryID = "' + id + '"',
+    con.query('SELECT * FROM subjects WHERE category_id = "' + id + '"',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
@@ -11,7 +11,7 @@ module.exports.getSubjects = function(con, id, callback){
 }
 
 module.exports.addSubject = function(con, subject, callback){
-    con.query('INSERT INTO subjects (name, categoryID) VALUES ("' + subject.name + '", "' + subject.categoryID + '")',
+    con.query('INSERT INTO subjects (name, category_id) VALUES ("' + subject.name + '", "' + subject.categoryID + '")',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')

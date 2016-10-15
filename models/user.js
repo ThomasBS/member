@@ -2,12 +2,11 @@ var tablename = "users"
 
 var fillable = [
     "name",
-    "email",
-    "password"
+    "email"
 ]
 
 module.exports.getUsers = function(con, callback){
-    con.query('SELECT * FROM users WHERE deleted = 0',
+    con.query('SELECT user_id, name, email, created FROM users WHERE deleted = 0',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
@@ -19,7 +18,7 @@ module.exports.getUsers = function(con, callback){
 }
 
 module.exports.getUser = function(con, id, callback){
-    con.query('SELECT * FROM users WHERE UserID = "' + id + '"',
+    con.query('SELECT * FROM users WHERE user_id = "' + id + '"',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
@@ -31,7 +30,7 @@ module.exports.getUser = function(con, id, callback){
 }
 
 module.exports.addUser = function(con, user, callback){
-    con.query('INSERT INTO users (Name, Email, Password) VALUES ("' + user.name + '", "' + user.email + '", "' + user.password + '")',
+    con.query('INSERT INTO users (name, email, password) VALUES ("' + user.name + '", "' + user.email + '", "' + user.password + '")',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
@@ -43,7 +42,7 @@ module.exports.addUser = function(con, user, callback){
 }
 
 module.exports.updateUser = function(con, id, user, callback){
-    con.query('UPDATE users SET Name = "' + user.name + '", Email = "' + user.email + '" WHERE UserID = "' + id + '"',
+    con.query('UPDATE users SET name = "' + user.name + '", email = "' + user.email + '" WHERE user_id = "' + id + '"',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
@@ -55,7 +54,7 @@ module.exports.updateUser = function(con, id, user, callback){
 }
 
 module.exports.deleteUser = function(con, id, callback){
-    con.query('UPDATE users SET Deleted = 1 WHERE UserID = "' + id + '"',
+    con.query('UPDATE users SET Deleted = 1 WHERE user_id = "' + id + '"',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')

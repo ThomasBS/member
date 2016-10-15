@@ -17,7 +17,7 @@ var fillable = [
 // }
 
 module.exports.getCategories = function(con, id, callback){
-    con.query('SELECT * FROM categories WHERE userID = "' + id + '"',
+    con.query('SELECT * FROM categories WHERE user_id = "' + id + '"',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
@@ -29,7 +29,7 @@ module.exports.getCategories = function(con, id, callback){
 }
 
 module.exports.addCategory = function(con, category, callback){
-    con.query('INSERT INTO categories (name, userID) VALUES ("' + category.name + '", "' + category.userID + '")',
+    con.query('INSERT INTO categories (name, user_id) VALUES ("' + category.name + '", "' + category.userID + '")',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
