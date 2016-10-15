@@ -1,5 +1,5 @@
 {
-  "name": "rember",
+  "name": "member",
   "version": "1.0.0",
   "description": "A simple app to help you remember important details about friends and loved ones",
   "main": "app.js",
@@ -8,10 +8,10 @@
   },
   "author": "Soeren Schultz Rasmussen",
   "license": "ISC",
-
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "*",
     "express": "*",
-    "mysql": "*",
-    "body-parser": "*"
+    "mysql": "*"
   }
 }
