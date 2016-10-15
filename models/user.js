@@ -18,7 +18,7 @@ module.exports.getUsers = function(con, callback){
 }
 
 module.exports.getUser = function(con, id, callback){
-    con.query('SELECT * FROM users WHERE user_id = "' + id + '"',
+    con.query('SELECT user_id, name, email, created FROM users WHERE user_id = "' + id + '"',
         function(err, rows, fields){
             if (err) {
                 console.log('Error in the query')
