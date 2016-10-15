@@ -1,0 +1,17 @@
+{
+  "name": "rember",
+  "version": "1.0.0",
+  "description": "A simple app to help you remember important details about friends and loved ones",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Soeren Schultz Rasmussen",
+  "license": "ISC",
+
+  "dependencies": {
+    "express": "*",
+    "mysql": "*",
+    "body-parser": "*"
+  }
+}
