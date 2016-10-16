@@ -110,8 +110,7 @@ app.get('/login/:_email&:_password', function(req, res){
 })
 
 /**
- * A simple function to handle the errors the app
- * might be given.
+ * A simple function to handle the errors of the app
  */
 function handleError(err) {
   if (err) {
